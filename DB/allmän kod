@@ -1,2 +1,0 @@
-db = MySQLdb.connect("195.178.232.16", port=3306, user="AD5158", passwd="Werenice123!", db="AD5158",  charset='utf8');
-cur = db.cursor(MySQLdb.cursors.DictCursor)
