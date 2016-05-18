@@ -1,7 +1,7 @@
 #coding:utf-8
 from bottle import *
-
 import MySQLdb
+import sys
 
 #log in to database
 
@@ -18,6 +18,12 @@ def server_static(filename):
 @route("/")
 def index():
     return template("indexdb")
+ 
+@route("articlepage")
+def articlepage():
+    return template("articlepage")
+
+
 
 
 
