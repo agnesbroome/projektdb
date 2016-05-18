@@ -2,6 +2,7 @@
 <html lang="en">
 <!-- Include headsection and global navigation -->
 % include("headdb.tpl")
+% include("navleft.tpl")    
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
