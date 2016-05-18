@@ -19,9 +19,9 @@ def server_static(filename):
 def index():
     return template("indexdb")
  
-@route("articlepage")
+@route("/article")
 def articlepage():
-    return template("articlepage")
+    return template("article")
 
 
 
