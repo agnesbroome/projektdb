@@ -16,9 +16,8 @@ def get_article(amount):
     cur.execute(query)
     return cur.fetchall()
 
-
-def single_article(SE):
-    query = ("SELECT Article_ID, Header, Ingress, Content, Pic_info FROM articles \ ORDER BY time_now ASC") 
+def single_article():
+    query = ("SELECT Article_ID, Header, Ingress, Content, Pic_info FROM articles") 
     cur.execute(query)
     return cur.fetchall()
 

@@ -8,14 +8,14 @@
       <div class="row">
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
           <div class="row placeholders">
-            <div class="col-xs-6 col-sm-3 placeholder">
-%for i in articlelist:              
+%for i in articlelist: 
+            <div class="col-xs-6 col-sm-3 placeholder" id="onearticle">
                 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
           
-              <h4>{{i["Header"]}}</h4>
-              <span class="text-muted">{{i["Ingress"]}}</span>
-%end
+                <h4>{{i["Header"]}}</h4>
+                <span class="text-muted">{{i["Ingress"]}}</span>
             </div>
+%end
           </div>
         </div>
       </div>
