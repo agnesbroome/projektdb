@@ -13,7 +13,7 @@
                 <img src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
           
               <h4>{{i["Header"]}}</h4>
-              <span class="text-muted">{{i["Ingress"]   }}</span>
+              <span class="text-muted">{{i["Ingress"]}}</span>
 %end
             </div>
           </div>
