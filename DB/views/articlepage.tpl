@@ -7,6 +7,17 @@
         <p>en artikel</p>  
     </div>
 
+<!-- Kommentarsfält -->
+
+    <div class="form-group1">
+        <label for="usr">Namn:</label>
+        <input type="text" class="form-control1" id="usr">
+        <label for="comment">Kommentar:</label>
+        <textarea class="form-control2 form-group2" rows="5" id="comment"></textarea>
+    </div>
+    
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

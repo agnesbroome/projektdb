@@ -2,8 +2,10 @@
 <html lang="en">
 <!-- Include headsection and global navigation -->
 % include("headdb.tpl")
-% include("navleft.tpl")  
+% include("navleft.tpl")
+    
     <div class="container-fluid">
+
       <p>flera artiklar</p>
     </div>
 
