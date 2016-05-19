@@ -4,7 +4,7 @@
 % include("headdb.tpl")
 % include("navleft.tpl")  
     <div class="container-fluid">
-      
+      <p>flera artiklar</p>
     </div>
 
     <!-- Bootstrap core JavaScript

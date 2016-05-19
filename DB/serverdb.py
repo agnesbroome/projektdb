@@ -11,15 +11,21 @@ cur = db.cursor(MySQLdb.cursors.DictCursor)
 #Variable that runs with the server file.
 app = app()
 
-def get_article():
-    query = "SELECT Header, Ingress, Content, Pic_info FROM Articles"
+def get_article(handler):
+    query = "SELECT Header, Ingress, Content, Pic_info FROM articles \
+        WHERE Article_ID = '%s' \
+        ORDER BY timenow ASC" % (handler)
     cur.execute(query)
     return cur.fetchall()
 
-def create_article():
-    query = ("INSERT INTO articles (Header, Ingress, Content, Pic_info) VALUES ('Malmöpar blåste försäkringsbolag åtta gånger på ett år', 'En nyårsraket i foten, en spik i stortån och en arm som fastnade i en klädmangel. Malmöparet fick gång på gång ut pengar från sitt försäkringsbolag efter olika olyckor. Nu döms paret för en lång rad försäkringsbedrägerier.', 'År 2014 var ett oturens år för den 27-åriga kvinnan och hennes make, att döma av deras korrespondens med försäkringsbolaget. Förutom de nämnda olyckorna ska kvinnan även ha fått kokande vatten över sig och, ramlat i trapphuset och spräckt trumhinnan – samt brutit benet när hon fastnat i en grop under en joggingtur i Pildammsparken.Totalt anmälde paret tio olika olycksfallsskador – och ett inbrott i sitt källarförråd. Och i åtta av fallen fick paret pengar utbetalda, totalt runt 60 000 kronor. Försäkringsutredningen om den felriktade raketen som träffade kvinnans fot var ännu inte färdigställd när misstankarna mot dem uppdagades.', 'Paret anmälde bland annat en nyårsraket som skulle ha landat på kvinnans fot. Bild: HENRIK MONTGOMERY / TT')")
-    cur.execute(query, (Header, Ingress, Content, Pic_info))
-    db.commit()
+def single_article(SE):
+    query = "SELECT * FROM articles \
+    WHERE article_ID = '%s'" % (SE)
+    cur.execute(query)
+    return cur.fetchall()
+
+#Routes
+#Här följer alla routes, dessa kan nås med ett / efter hemsidenamnet.
 
 @route('/static/<filename:path>')
 def server_static(filename):
@@ -27,19 +33,14 @@ def server_static(filename):
 
 @route("/")
 def index():
-    return template("indexdb", articles=get_article())
+    return template("indexdb", articles=get_article('12'))
  
 @route("/article")
 def articlepage():
     return template("article")
 
-
-
-
-
-
-#Routes
-#Här följer alla routes, dessa kan nås med ett / efter hemsidenamnet.
-
+@route("/articlepage/<handler>")
+def articlepage():
+    return template("articlepage", sin=single_article(handler))
 
 run(app=app)
