@@ -9,12 +9,19 @@
 
 <!-- Kommentarsfält -->
 
-    <div class="form-group1">
-        <label for="usr">Namn:</label>
-        <input type="text" class="form-control1" id="usr">
-        <label for="comment">Kommentar:</label>
-        <textarea class="form-control2 form-group2" rows="5" id="comment"></textarea>
-    </div>
+        <div class="comments">
+                <form method ="post">
+
+                    <label for="title">Namn:</label>
+                    <input type="text" id="title">
+                    <label for="content">Kommentar:</label>
+                    <input type="text" id="content">
+                    <input type="submit" value="Submit">
+                </form>
+                <p>
+                    
+                </p>
+        </div>
     
 
 
