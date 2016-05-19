@@ -9,7 +9,7 @@
 
 <!-- Kommentarsfält -->
 
-        <div class="comments">
+        <div class="form" id="comments">
                 <form method ="post">
 
                     <label for="title">Namn:</label>
