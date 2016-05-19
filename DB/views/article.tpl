@@ -5,8 +5,12 @@
 % include("navleft.tpl")
     
     <div class="container-fluid">
-
-      <p>flera artiklar</p>
+      %for i in articlelist: 
+            <div class="col-xs-6 col-sm-3 placeholder" id="onearticle">
+                <h4>{{i["Header"]}}</h4>
+                <span class="text-muted">{{i["Ingress"]}}</span>
+            </div>
+%end
     </div>
 
     <!-- Bootstrap core JavaScript
