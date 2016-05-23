@@ -16,10 +16,16 @@ def get_article():
     cur.execute(query)
     return cur.fetchall()
 
-def single_article():
-    query = ("SELECT Article_ID, Header, Ingress, Content, Pic_info FROM articles") 
+def single_article(SA):
+    query = "SELECT * FROM articles WHERE article_ID = '%s'" % SA
     cur.execute(query)
     return cur.fetchall()
+    
+def get_comment(GC):
+    query = "SELECT * FROM comments WHERE article_ID = '%s'" % GC
+    cur.execute(query)
+    return cur.fetchall()
+    
 
 #Routes
 #Här följer alla routes, dessa kan nås med ett / efter hemsidenamnet.
@@ -33,11 +39,27 @@ def index():
     return template("indexdb", articlelist=get_article())
  
 @route("/article")
-def articlepage():
+def article():
     return template("article", articlelist=get_article())
 
-@route("/articlepage")
-def articlepage():
-    return template("articlepage", sin=single_article())
+@route("/articlepage/<bla>")
+def articlepage(bla):
+    bla=bla
+    return template("articlepage", sin=single_article(bla), getc=get_comment(bla))
+
+@route("/comment_form", method="post")
+def comment_form():
+    name = request.forms.get("name")
+    comment = request.forms.get("comment")
+    ID = request.forms.get("Article_ID")
+    query = ("INSERT INTO comments (name, comment, Article_ID) VALUES (%s, %s, %s)")
+    cur.execute(query, (name, comment, ID))
+    db.commit()
+    return template("articlepage", sin=single_article(ID), getc=get_comment(ID))
+
+
+    
+
+
 
 run(app=app)
