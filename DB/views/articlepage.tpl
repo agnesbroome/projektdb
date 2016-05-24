@@ -23,6 +23,7 @@
 
 <!-- Kommentarsfält -->
 
+<<<<<<< Updated upstream
                 <div class="form" id="commenting">
                     <form method ="post" action="/comment_form">
                         <div id="divforname">
@@ -53,6 +54,20 @@
              %end   
             </div>
             </div>
+=======
+        <div class="form" id="formcomments">
+                <form method ="post">
+
+                    <label for="title">Namn:</label>
+                    <input type="text" id="title">
+                    <label for="content">Kommentar:</label>
+                    <input type="text" id="comments">
+                    <input type="submit" value="Submit">
+                </form>
+                <p>
+                    
+                </p>
+>>>>>>> Stashed changes
         </div>
     </div>
 

@@ -18,9 +18,15 @@ body {
  *
  */
 
+<<<<<<< Updated upstream
 #commenting {
     width: 100%;
     min-height: 160px;
+=======
+#comments {
+    width: 500px;
+    height: 150px;
+>>>>>>> Stashed changes
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
