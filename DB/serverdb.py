@@ -11,8 +11,8 @@ cur = db.cursor(MySQLdb.cursors.DictCursor)
 #Variable that runs with the server file.
 app = app()
 
-def get_article():
-    query = ("SELECT Article_ID, Header, Ingress, Content, Pic_info, timenow FROM articles") 
+def get_article(amount):
+    query = ("SELECT Article_ID, Header, Ingress, Content, Pic_info, timenow FROM articles ORDER BY timenow DESC LIMIT %s" % (amount)) 
     cur.execute(query)
     return cur.fetchall()
 
@@ -36,11 +36,11 @@ def server_static(filename):
 
 @route("/")
 def index():
-    return template("indexdb", articlelist=get_article())
+    return template("indexdb", articlelist=get_article('12'))
  
 @route("/article")
 def article():
-    return template("article", articlelist=get_article())
+    return template("article", articlelist=get_article('1000'))
 
 @route("/articlepage/<bla>")
 def articlepage(bla):

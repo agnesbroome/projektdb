@@ -9,7 +9,7 @@
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       %for i in articlelist: 
                 <div class="col-xs-6 col-sm-3 placeholder" id="onearticle">
-                    <h4>{{i["Header"]}}</h4>
+                    <h4><a href="/articlepage/{{i['Article_ID']}}">{{i["Header"]}}</a></h4>
                     <span class="text-muted">{{i["Ingress"]}}</span>
                 </div>
 %end
